@@ -1,0 +1,43 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>test</title>
+
+<link rel="stylesheet" href="http://troloload.ru/f/183_normalize_v1.0.2.css" media="all">
+<style>
+
+body { background-color: #f5f5f5; }
+
+div {
+  margin: auto;
+  width: 300px;
+}
+
+input,
+textarea {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  padding: 5px;
+  width: 100%;
+}
+input:focus,
+textarea:focus {
+  outline: 1px solid Highlight;
+}
+  
+</style>
+
+<div>
+  <p><input type="text" class="usual" placeholder="Обычный плейсхолдер">
+
+  <p><input type="text" placeholder="Имя">
+  <p><input type="text" placeholder="Отчество">
+  <p><textarea name="" id="" cols="30" rows="10" placeholder="Введите свой комментарий"></textarea>
+</div>
+
+<script src="http://yandex.st/jquery/1.8.3/jquery.min.js"></script>
+<script src="jquery.placeholderPolyfill.min.js"></script>
+<script>
+
+$('input, textarea').not('.usual').placeholderPolyfill();
+
+</script>
