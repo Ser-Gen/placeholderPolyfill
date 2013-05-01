@@ -1,15 +1,15 @@
 /*!
  * placeHolder polyfill 1.0
  * https://github.com/Ser-Gen/placeholderPolyfill
- * Поддержка плейсхолдеров в старых браузерах
+ * РџРѕРґРґРµСЂР¶РєР° РїР»РµР№СЃС…РѕР»РґРµСЂРѕРІ РІ СЃС‚Р°СЂС‹С… Р±СЂР°СѓР·РµСЂР°С…
  * jQuery >1.7
  * MIT licensed
  *
- * Создан Сергеем Васильевым (@Ser_Gen)
+ * РЎРѕР·РґР°РЅ РЎРµСЂРіРµРµРј Р’Р°СЃРёР»СЊРµРІС‹Рј (@Ser_Gen)
  */
 (function($) {
 
-    // восстанавливаем значение
+    // РІРѕСЃСЃС‚Р°РЅР°РІР»РёРІР°РµРј Р·РЅР°С‡РµРЅРёРµ
     function restoreVal ( elem ) {
       var val = elem.attr( 'placeholder' );
       if ( elem.val() === val ) {
@@ -25,7 +25,7 @@
       }
     }
 
-    // устанавливаем положение курсора
+    // СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РїРѕР»РѕР¶РµРЅРёРµ РєСѓСЂСЃРѕСЂР°
     function resetCursor ( elem ) {
       if ( elem.val() == elem.attr( 'placeholder' ) ) {
         elem = elem[0];
@@ -40,7 +40,7 @@
       }
     }
 
-    // проверяем состояние при вводе текста
+    // РїСЂРѕРІРµСЂСЏРµРј СЃРѕСЃС‚РѕСЏРЅРёРµ РїСЂРё РІРІРѕРґРµ С‚РµРєСЃС‚Р°
     function preventDel ( elem ) {
       var val = elem.attr( 'placeholder' );
       if ( elem.val() === val ) {
@@ -68,7 +68,7 @@
       });
     }
 
-    // при отправке данных обнуляем
+    // РїСЂРё РѕС‚РїСЂР°РІРєРµ РґР°РЅРЅС‹С… РѕР±РЅСѓР»СЏРµРј
     function submitting ( elem ) {
       var val = elem.attr( 'placeholder' );
       if ( elem.val() === val ) {
@@ -76,7 +76,7 @@
       }
     }
 
-    // навешиваем обработчики
+    // РЅР°РІРµС€РёРІР°РµРј РѕР±СЂР°Р±РѕС‚С‡РёРєРё
     function inputProcessor ( elem ) {
       restoreVal( elem );
       elem.on( 'focus', function () { preventDel(elem); } );
@@ -93,7 +93,7 @@
       });
     }
 
-    // проверяем, поддерживаются ли плейсхолдеры браузером
+    // РїСЂРѕРІРµСЂСЏРµРј, РїРѕРґРґРµСЂР¶РёРІР°СЋС‚СЃСЏ Р»Рё РїР»РµР№СЃС…РѕР»РґРµСЂС‹ Р±СЂР°СѓР·РµСЂРѕРј
     $(document).ready(function () {
       if ( typeof document.createElement( "input" ).placeholder === "undefined" ) {
         $( 'input' ).each( function () {
